@@ -7,7 +7,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2021-2023, Cypress Semiconductor Corporation (an Infineon company) or
+# Copyright 2021-2024, Cypress Semiconductor Corporation (an Infineon company) or
 # an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 #
 # This software, including source code, documentation and related
@@ -113,7 +113,12 @@ DEFINES+=WICED_BT_TRACE_ENABLE
 # added to the build
 #
 DISABLE_COMPONENTS=BTFW-TX10
+ifeq ($(TARGET),APP_CYW920829M2EVK-02)
 COMPONENTS=FREERTOS WICED_BLE CYW20829B0 BTFW-PAWR-TX10
+endif # TARGET
+ifeq ($(TARGET),APP_CYW989829M2EVB-01)
+COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-PAWR-TX10
+endif # TARGET
 
 # By default the build system automatically looks in the Makefile's directory
 # tree for source code and builds it. The SOURCES variable can be used to
@@ -130,7 +135,6 @@ DEFINES+=CY_RETARGET_IO_CONVERT_LF_TO_CRLF CY_RTOS_AWARE \
         NEW_WICED_STACK \
         STACK_INSIDE_FREE_RTOS=TRUE \
         CYW20829 \
-        BMS_OVER_PAWR \
         CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED=0 \
         COMPONENT_WICED_BLE
 

@@ -1,10 +1,10 @@
-# AIROC&trade;  CYW20829: Bluetooth&reg; LE PAwR Client
+# AIROC&trade: Bluetooth&reg; LE PAwR Client
 
-This code example demonstrates the implementation of a Bluetooth&reg; LE custom service with Bluetooth&reg; security using AIROC&trade; CYW20829 devices and ModusToolbox&trade; software environment.
+This code example demonstrates the implementation of a Bluetooth&reg; LE custom service with Bluetooth&reg; security using AIROC&trade; CYW20829/CYW89829 devices and ModusToolbox&trade; software environment.
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-btstack-freertos-pawr-client)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOyAgQ1lXMjA4Mjk6IEJsdWV0b290aCZyZWc7IExFIFBBd1IgQ2xpZW50IiwicmlkIjoibWFveGluIiwiRG9jIHZlcnNpb24iOiIxLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiQlRBQkxFIn0=)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOiBCbHVldG9vdGgmcmVnOyBMRSBQQXdSIENsaWVudCIsInJpZCI6Im1hb3hpbiIsIkRvYyB2ZXJzaW9uIjoiMS4xLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IkJUQUJMRSJ9)
 
 
 ## Requirements
@@ -12,6 +12,7 @@ This code example demonstrates the implementation of a Bluetooth&reg; LE custom 
 - [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.0)
 - Board support package (BSP) minimum required version for:
    - CYW920829M2EVK-02: v1.0.2
+   - CYW989829M2EVB-01: v1.0.1
 - Programming language: C
 - Associated parts: [AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)
 
@@ -28,7 +29,7 @@ This code example demonstrates the implementation of a Bluetooth&reg; LE custom 
 ## Supported kits (make variable 'TARGET')
 
 - [AIROC&trade; CYW20829 Bluetooth&reg; LE Evaluation Kit](https://www.infineon.com/CYW920829M2EVK-02)(`CYW920829M2EVK-02`) – Default value of `TARGET`
-
+- [AIROC&trade; CYW89829 Bluetooth&reg; LE evaluation kit] (`CYW989829M2EVB-01`)
 
 
 
@@ -87,10 +88,11 @@ Argument | Description | Required/optional
 
 <br>
 
-The following example clones the "[LE PAwR Client](https://github.com/Infineon/mtb-example-btstack-freertos-pawr-client)" application with the desired name "MyPAwRClient" configured for the *CYW920829M2EVK-02* BSP into the specified working directory, *C:/mtb_projects*:
+The following example clones the "[LE PAwR Client](https://github.com/Infineon/mtb-example-btstack-freertos-pawr-client)" application with the desired name "MyPAwRClient" configured for the *CYW920829M2EVK-02*/*CYW989829M2EVB-01* BSP into the specified working directory, *C:/mtb_projects*:
 
    ```
    project-creator-cli --board-id CYW920829M2EVK-02 --app-id mtb-example-btstack-freertos-pawr-client --user-app-name "MyPAwRClient" --target-dir "C:/mtb_projects"
+   project-creator-cli --board-id CYW989829M2EVB-01 --app-id mtb-example-btstack-freertos-pawr-client --user-app-name "MyPAwRClient" --target-dir "C:/mtb_projects"
    ```
 
 **Note:** The project-creator-cli tool uses the `git clone` and `make getlibs` commands to fetch the repository and import the required libraries. For details, see the "Project creator tools" section of the [ModusToolbox&trade; software user guide](https://www.infineon.com/ModusToolboxUserGuide) (locally available at *{ModusToolbox&trade; software install directory}/docs_{version}/mtb_user_guide.pdf*).
@@ -108,12 +110,16 @@ Argument | Description | Required/optional
 
 <br>
 
-The following example adds the CYW20829 BSP to the already created application and makes it the active BSP for the app:
+The following example adds the CYW20829/CYW89829 BSP to the already created application and makes it the active BSP for the app:
 
    ```
    library-manager-cli --project "C:/mtb_projects/MyPAwRClient" --add-bsp-name CYW920829M2EVK-02 --add-bsp-version "latest-v4.X" --add-bsp-location "local"
 
    library-manager-cli --project "C:/mtb_projects/MyPAwRClient" --set-active-bsp APP_CYW920829M2EVK-02
+
+   library-manager-cli --project "C:/mtb_projects/MyPAwRClient" --add-bsp-name CYW989829M2EVB-01 --add-bsp-version "latest-v4.X" --add-bsp-location "local"
+
+   library-manager-cli --project "C:/mtb_projects/MyPAwRClient" --set-active-bsp APP_CYW989829M2EVB-01
    ```
 
 </details>
@@ -175,14 +181,15 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
       Example:
       ```
       make program TARGET=CYW920829M2EVK-02 TOOLCHAIN=GCC_ARM
+      make program TARGET=CYW989829M2EVB-01 TOOLCHAIN=GCC_ARM
       ```
    </details>
 
 4. After programming, PAwR Client and multiple PAwR Server the application starts automatically. Observe the messages on the UART terminal, and wait for PAwR Central and Peripheral sync established. Use the KitProg3 COM port to view the Bluetooth&reg; stack and application trace messages in the terminal window: the PAwR Client and Server will exchange data.
 
-5. Configure the PAwR parameters 
+5. Configure the PAwR parameters
 
-   *In the PAwR Client:* 
+   *In the PAwR Client:*
 
    Parameter | Description
    ----------|------------
@@ -192,7 +199,7 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
    `PAWR_RESPONSE_DELAY` | Response delay
    `PAWR_RESPONSE_SPACE` | Response space
 
-   *In the PAwR Server* 
+   *In the PAwR Server*
    Parameter | Description
    ----------|------------
    `PAWR_PERIPHERAL_RSP_SLOT` | Response slot
@@ -201,8 +208,6 @@ The log from the PAwR Client show that the PAwR Client receives a response from 
 
 
 ## Steps to enable BTSpy logs
-
-**Note:** This feature is available only for CYW920829M2EVK-02.
 
 1. Navigate to the application Makefile and open it. Find the Makefile variable `ENABLE_SPY_TRACES` and set it to the value *1* as shown:
 
@@ -228,7 +233,7 @@ You can debug the example to step through the code. In the IDE, use the **\<Appl
 
 ## Design and implementation
 
-The code example configures the device as a Bluetooth&reg; Periodic Advertisement with Response (PAwR) Client, which works with the PAwR Server. The PAwR Client starts extended advertising with the PAwR parameters and PAwR advertising. The PAwR Server starts scan when it finds the PAwR configuration in extended advertising, and then starts to sync with the PAwR Client using PAwR parameters. 
+The code example configures the device as a Bluetooth&reg; Periodic Advertisement with Response (PAwR) Client, which works with the PAwR Server. The PAwR Client starts extended advertising with the PAwR parameters and PAwR advertising. The PAwR Server starts scan when it finds the PAwR configuration in extended advertising, and then starts to sync with the PAwR Client using PAwR parameters.
 
 After the PAwR Server is synced with the PAwR Client, the PAwR Client can send data to the PAwR Server using PAwR indication event; the PAwR Server will respond with its data using the PAwR Response event. The PAwR Client and Server receive data in a sub event; the response slot can be seen in the UART log.
 
@@ -269,7 +274,7 @@ This section explains the ModusToolbox&trade; software resources and their confi
 
    Note that unlike the Device Configurator, the Bluetooth&reg; configurator settings and files are local to each respective application. The services and characteristics added are explained in the [Design and implementation](#design-and-implementation) section. See the [Bluetooth&reg; Configurator guide](https://www.infineon.com/ModusToolboxBLEConfig).
 
-**Note:** For CYW20829, if you want to use the Bluetooth&reg; Configurator tool, select the *AIROC&trade; BTSTACK with Bluetooth&reg; LE only (CYW20829, PSoC&trade; 6 with CYW43xxx Connectivity device)* option from the drop-down menu to select the device. Do not use the *PSoC&trade; Bluetooth&reg; LE Legacy Stack (PSoC&trade; 6-BLE)* option because it is not compatible with AIROC&trade; BTSTACK.
+**Note:** For CYW20829/CYW89829, if you want to use the Bluetooth&reg; Configurator tool, select the *AIROC&trade; BTSTACK with Bluetooth&reg; LE only (CYW20829/CYW89829, PSoC&trade; 6 with CYW43xxx Connectivity device)* option from the drop-down menu to select the device. Do not use the *PSoC&trade; Bluetooth&reg; LE Legacy Stack (PSoC&trade; 6-BLE)* option because it is not compatible with AIROC&trade; BTSTACK.
 
 **Table 1. Application resources**
 
@@ -285,7 +290,7 @@ Resources  | Links
 -----------|----------------------------------
 Application notes  | [AN228571](https://www.infineon.com/AN228571) – Getting started with PSoC&trade; 6 MCU on ModusToolbox&trade; software <br>  [AN215656](https://www.infineon.com/AN215656) – PSoC&trade; 6 MCU: Dual-CPU system design
 Code examples  | [Using ModusToolbox&trade; software](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) on GitHub
-Device documentation | [PSoC&trade; 6 MCU datasheets](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Data%20Sheet) <br> [PSoC&trade; 6 technical reference manuals](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Additional%20Technical%20Information)<br>[AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)
+Device documentation | [PSoC&trade; 6 MCU datasheets](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Data%20Sheet) <br> [PSoC&trade; 6 technical reference manuals](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Additional%20Technical%20Information)<br>[AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)<br>[AIROC&trade; CYW89829 Bluetooth&reg; LE SoC]
 Development kits | Select your kits from the [evaluation board finder](https://www.infineon.com/cms/en/design-support/finder-selection-tools/product-finder/evaluation-board)
 Libraries on GitHub  | [mtb-pdl-cat1](https://github.com/Infineon/mtb-pdl-cat1) – PSoC&trade; 6 peripheral driver library (PDL)  <br> [mtb-hal-cat1](https://github.com/Infineon/mtb-hal-cat1) – Hardware abstraction layer (HAL) library <br> [retarget-io](https://github.com/Infineon/retarget-io) – Utility library to retarget STDIO messages to a UART port
 Middleware on GitHub  | [capsense](https://github.com/Infineon/capsense) – CAPSENSE&trade; library and documents <br> [psoc6-middleware](https://github.com/Infineon/modustoolbox-software#psoc-6-middleware-libraries) – Links to all PSoC&trade; 6 MCU middleware
@@ -305,6 +310,7 @@ Document title: *CE238989* – *AIROC&trade;: Bluetooth&reg; LE PAwR Client*
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example
+ 1.1.0   | Add support for CYW989829M2EVB-01
 
 -------------------------------------------------------------------------------
 
