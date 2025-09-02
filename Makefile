@@ -7,7 +7,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2021-2024, Cypress Semiconductor Corporation (an Infineon company) or
+# Copyright 2021-2025, Cypress Semiconductor Corporation (an Infineon company) or
 # an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 #
 # This software, including source code, documentation and related
@@ -115,16 +115,12 @@ DEFINES+=WICED_BT_TRACE_ENABLE
 #
 
 ifeq ($(TARGET),APP_CYW920829M2EVK-02)
-DISABLE_COMPONENTS=BTFW-TX10
-COMPONENTS=FREERTOS WICED_BLE CYW20829B0 BTFW-PAWR-TX10
+DISABLE_COMPONENTS=
+COMPONENTS=FREERTOS WICED_BLE BTFW-TX10
 endif # TARGET
 ifeq ($(TARGET),APP_CYW989829M2EVB-01)
-DISABLE_COMPONENTS=BTFW-BGA77-TX10
-COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-BGA77-PAWR-TX10
-endif # TARGET
-ifeq ($(TARGET),APP_CYW989829M2EVB-03)
-DISABLE_COMPONENTS=BTFW-TX10
-COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-PAWR-TX10
+DISABLE_COMPONENTS=
+COMPONENTS=FREERTOS WICED_BLE BTFW-TX10
 endif # TARGET
 
 # By default the build system automatically looks in the Makefile's directory

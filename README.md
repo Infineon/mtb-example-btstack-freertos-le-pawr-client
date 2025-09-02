@@ -4,16 +4,15 @@ This code example demonstrates the implementation of a Bluetooth&reg; LE custom 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-btstack-freertos-pawr-client)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOiBCbHVldG9vdGgmcmVnOyBMRSBQQXdSIENsaWVudCIsInJpZCI6Im1hb3hpbiIsIkRvYyB2ZXJzaW9uIjoiMi4wLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IkJUQUJMRSJ9)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOiBCbHVldG9vdGgmcmVnOyBMRSBQQXdSIENsaWVudCIsInJpZCI6Im1hb3hpbiIsIkRvYyB2ZXJzaW9uIjoiMi4xLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IkJUQUJMRSJ9)
 
 
 ## Requirements
 
 - [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.2 or later (tested with v3.2)
 - Board support package (BSP) minimum required version for:
-   - CYW989829M2EVB-03: v2.0.0
-   - CYW920829M2EVK-02: v2.0.0
-   - CYW989829M2EVB-01: v2.0.0
+   - CYW989829M2EVB-01: v3.0.0
+   - CYW920829M2EVK-02: v3.0.0
 - Programming language: C
 - Associated parts: [AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)
 
@@ -30,7 +29,7 @@ This code example demonstrates the implementation of a Bluetooth&reg; LE custom 
 ## Supported kits (make variable 'TARGET')
 
 - [AIROC&trade; CYW20829 Bluetooth&reg; LE Evaluation Kit](https://www.infineon.com/CYW920829M2EVK-02)(`CYW920829M2EVK-02`) – Default value of `TARGET`
-- [AIROC&trade; CYW89829 Bluetooth&reg; LE evaluation kit] (`CYW989829M2EVB-01`, `CYW989829M2EVB-03` )
+- [AIROC&trade; CYW89829 Bluetooth&reg; LE evaluation kit] (`CYW989829M2EVB-01`)
 
 
 
@@ -314,6 +313,7 @@ Document title: *CE238989* – *AIROC&trade;: Bluetooth&reg; LE PAwR Client*
  1.1.0   | Add support for CYW989829M2EVB-01
  1.2.0   | Add support for CYW989829M2EVB-03
  2.0.0   | BSP and BTStack-integration major update for BT Firmware as a separate asset
+ 2.1.0   | Remove support for CYW989829M2EVB-03
 
 -------------------------------------------------------------------------------
 
