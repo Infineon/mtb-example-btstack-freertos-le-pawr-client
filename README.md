@@ -4,7 +4,7 @@ This code example demonstrates the implementation of a Bluetooth&reg; LE custom 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-btstack-freertos-pawr-client)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOiBCbHVldG9vdGgmcmVnOyBMRSBQQXdSIENsaWVudCIsInJpZCI6Im1hb3hpbiIsIkRvYyB2ZXJzaW9uIjoiMi4xLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IkJUQUJMRSJ9)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzg5ODkiLCJTcGVjIE51bWJlciI6IjAwMi0zODk4OSIsIkRvYyBUaXRsZSI6IkFJUk9DJnRyYWRlOiBCbHVldG9vdGgmcmVnOyBMRSBQQXdSIENsaWVudCIsInJpZCI6ImpvaG5zb24ubGlAaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIzLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiQlRBQkxFIn0=)
 
 
 ## Requirements
@@ -314,6 +314,7 @@ Document title: *CE238989* – *AIROC&trade;: Bluetooth&reg; LE PAwR Client*
  1.2.0   | Add support for CYW989829M2EVB-03
  2.0.0   | BSP and BTStack-integration major update for BT Firmware as a separate asset
  2.1.0   | Remove support for CYW989829M2EVB-03
+ 3.0.0   | Update Code Example with latest BTSTACK 5.0.0
 
 -------------------------------------------------------------------------------
 
